@@ -11,58 +11,6 @@
 --Fly (Toggle E)
 --HipHeight
 --Name Tag Displays
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
 
 if game.PlaceId == 10859465529 then 
 
@@ -73,11 +21,6 @@ getgenv().autoSlow = true
 getgenv().autoFarm = true
 
 
-
-
-
-
-
 --CREDS VIPER
 -- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
 --FEATURES
@@ -91,6 +34,37 @@ getgenv().autoFarm = true
 --Fly (Toggle E)
 --HipHeight
 --Name Tag Displays
+--CREDS VIPER
+-- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
+--FEATURES
+-- Auto Farm Player
+--Instant Escape(OP)
+--Auto Decrease Clicks
+--Aimbot
+--ESP
+--AutoSpin Fast and Slow
+--Walkspeed
+--Fly (Toggle E)
+--HipHeight
+--Name Tag Displays
+--CREDS VIPER
+-- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
+--FEATURES
+-- Auto Farm Player
+--Instant Escape(OP)
+--Auto Decrease Clicks
+--Aimbot
+--ESP
+--AutoSpin Fast and Slow
+--Walkspeed
+--Fly (Toggle E)
+--HipHeight
+--Name Tag Displays
+
+
+
+
+
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
@@ -119,19 +93,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
     
 })
 
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+
 
 Aimbot:NewToggle("AutoFarm Player", "", function(state)
     if state then
@@ -143,19 +105,7 @@ Aimbot:NewToggle("AutoFarm Player", "", function(state)
 end)
 
 
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+
 
 
 
@@ -203,19 +153,7 @@ Aimbot:NewToggle("AimBot", "This isnt perfect as the things you throw take time 
         })
 
 
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+
     else
         if state == false then
             getgenv().Aimbot.Functions:Exit()
@@ -257,19 +195,7 @@ Main1:NewToggle("NameTag ESP (Q To Toggle)", "", function(state)
     end
     end)
 
-        --CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+        
  
 
 Main2:NewToggle("AutoSpin (FAST)", " ", function(state)
@@ -398,19 +324,7 @@ end)
 Fly()
 end)
 
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+
 
 Main2:NewLabel("Toggle GUI")
 
@@ -471,19 +385,7 @@ function autoFarm()
     end
 
     
-    --CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+    
 
 -- BYPASS
     local e1 
@@ -522,23 +424,10 @@ function autoFarm()
             end)
         end
     end
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/SleeksScripts/loading-z/main/script"))()
     check_2()
 
     
 end
     
 
---CREDS VIPER
--- JOIN THE DISCORD - https://discord.gg/ZjnMetfUDN
---FEATURES
--- Auto Farm Player
---Instant Escape(OP)
---Auto Decrease Clicks
---Aimbot
---ESP
---AutoSpin Fast and Slow
---Walkspeed
---Fly (Toggle E)
---HipHeight
---Name Tag Displays
+
