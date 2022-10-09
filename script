@@ -1,0 +1,382 @@
+if game.PlaceId == 10859465529 then 
+
+getgenv().AutoEscape = true
+getgenv().ESP1 = true
+getgenv().autoSpin = true
+getgenv().autoSlow = true
+getgenv().autoFarm = true
+
+
+
+
+
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+
+local MainFarm = Library.CreateLib("Pls Capture Script Made By VIPER", "Sentinel")
+
+local AutoFarm = MainFarm:NewTab("Main")
+
+local Aimbot = AutoFarm:NewSection("Main Section")
+
+
+local ESPfarm = MainFarm:NewTab("ESP")
+
+local Main1 = ESPfarm:NewSection("ESP")
+
+local Misc = MainFarm:NewTab("Misc")
+
+local Main2 = Misc:NewSection("Misc Section")
+
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Duration = "1",
+    Title = "Loading Script", -- Required
+    Text = "Script Loaded Thanks For Using It", -- Required
+    
+    
+})
+
+
+
+Aimbot:NewToggle("AutoFarm Player", "", function(state)
+    if state then
+        getgenv().autoFarm = true
+            autoFarm()
+    else
+        getgenv().autoFarm = false
+    end
+end)
+
+
+
+
+
+
+Aimbot:NewToggle("AimBot", "This isnt perfect as the things you throw take time to get to the enemy", function(state)
+    if state then
+        
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SleeksScripts/AIMBOT/main/script"))()
+
+
+        getgenv().Aimbot.Settings = {
+            SendNotifications = true,
+            SaveSettings = true, -- Re-execute upon changing
+            ReloadOnTeleport = true,
+            Enabled = true,
+            TeamCheck = false,
+            AliveCheck = true,
+            WallCheck = false, -- Laggy
+            Sensitivity = 0, -- Animation length (in seconds) before fully locking onto target
+            TriggerKey = "MouseButton2",
+            Toggle = false,
+            LockPart = "Head" -- Body part to lock on (Character part's name)
+        }
+        
+        getgenv().Aimbot.FOVSettings = {
+            Enabled = true,
+            Visible = true,
+            Amount = 90,
+            Color = "255, 255, 255",
+            LockedColor = "255, 70, 70",
+            Transparency = 0.5,
+            Sides = 60,
+            Thickness = 1,
+            Filled = false
+        }
+
+
+
+        game:GetService("StarterGui"):SetCore("SendNotification",{
+            Duration = "1",
+            Title = "Aimbot", -- Required
+            Text = "Hold Down Right Click To Lock On, Works Best In First Person  ", 
+            
+            
+            
+        })
+
+
+
+    else
+        if state == false then
+            getgenv().Aimbot.Functions:Exit()
+        end
+    end
+end)
+
+Aimbot:NewToggle("AutoClick To Get Free", "", function(state)
+    if state then
+        getgenv().AutoEscape = true
+            AutoEscape()
+    else
+        getgenv().AutoEscape = false
+    end
+end)
+
+Aimbot:NewButton("Fast Escape", "", function()
+
+game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Title.PlayGame:InvokeServer()
+end)
+
+
+Main1:NewToggle("NameTag ESP (Q To Toggle)", "", function(state)
+    if state then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SleeksScripts/ESP/main/script"))()
+        
+        game:GetService("StarterGui"):SetCore("SendNotification",{
+            Duration = "1",
+            Title = "ESP", -- Required
+            Text = "To toggle the ESP press Q", 
+            
+            
+            
+        })
+            
+       
+    else
+       
+    end
+    end)
+
+        
+ 
+
+Main2:NewToggle("AutoSpin (FAST)", " ", function(state)
+    if state then
+        getgenv().autoSpin = true
+            autoSpin()
+            
+    else
+        
+            getgenv().autoSpin = false
+                
+        end
+    
+end)
+
+Main2:NewToggle("AutoSpin (SLOW)", " ", function(state)
+    if state then
+        getgenv().autoSlow = true
+            autoSlow()
+            
+    else
+        
+            getgenv().autoSlow = false
+        
+        end
+end)
+
+
+Main2:NewSlider("WalkSpeed", "This changes how fast you go", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s 
+end)
+
+
+Main2:NewSlider("HipHeight", "This changes how fast you go", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = s 
+end)
+
+Main2:NewButton("HideNameTag", "This hides your nametag", function()
+    game:service'Players'.LocalPlayer.Character.Humanoid.NameDisplayDistance = 1
+end)
+
+Main2:NewButton("DisplayNameTag", "This unhides your nametag", function()
+    game:service'Players'.LocalPlayer.Character.Humanoid.NameDisplayDistance = 100
+end)
+
+Main2:NewButton("Fly (Press P To Toggle)", "This makes your character fly", function()
+    repeat wait() 
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+local mouse = game.Players.LocalPlayer:GetMouse() 
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer 
+local torso = plr.Character.HumanoidRootPart 
+local flying = true
+local deb = true 
+local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+local maxspeed = 500
+local speed = 0 
+
+function Fly() 
+local bg = Instance.new("BodyGyro", torso) 
+bg.P = 9e4 
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+bg.cframe = torso.CFrame 
+local bv = Instance.new("BodyVelocity", torso) 
+bv.velocity = Vector3.new(0,0.1,0) 
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+repeat wait() 
+plr.Character.Humanoid.PlatformStand = true 
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+speed = speed+.5+(speed/maxspeed) 
+if speed > maxspeed then 
+speed = maxspeed 
+end 
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+speed = speed-1 
+if speed < 0 then 
+speed = 0 
+end 
+end 
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+else 
+bv.velocity = Vector3.new(0,0.1,0) 
+end 
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+until not flying 
+ctrl = {f = 0, b = 0, l = 0, r = 0} 
+lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+speed = 0 
+bg:Destroy() 
+bv:Destroy() 
+plr.Character.Humanoid.PlatformStand = false 
+end 
+mouse.KeyDown:connect(function(key) 
+if key:lower() == "p" then 
+if flying then flying = false 
+else 
+flying = true 
+Fly() 
+end 
+elseif key:lower() == "w" then 
+ctrl.f = 1 
+elseif key:lower() == "s" then 
+ctrl.b = -1 
+elseif key:lower() == "a" then 
+ctrl.l = -1 
+elseif key:lower() == "d" then 
+ctrl.r = 1 
+end 
+end) 
+mouse.KeyUp:connect(function(key) 
+if key:lower() == "w" then 
+ctrl.f = 0 
+elseif key:lower() == "s" then 
+ctrl.b = 0 
+elseif key:lower() == "a" then 
+ctrl.l = 0 
+elseif key:lower() == "d" then 
+ctrl.r = 0 
+end 
+end)
+Fly()
+end)
+
+
+
+Main2:NewLabel("Toggle GUI")
+
+
+
+Main2:NewKeybind("This is the keybind to toggle your GUI", "DO NOT EDIT THIS KEYBIND", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+
+
+function AutoEscape()
+while getgenv().AutoEscape == true do
+   game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Capture.DecreaseClicksLeft:InvokeServer()
+   task.wait()
+end
+end
+
+function autoSpin()
+    while getgenv().autoSpin == true do wait()
+        game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Title.UseSpinner:InvokeServer(false)
+
+
+    end
+
+end
+
+function autoSlow()
+    while getgenv().autoSlow == true do wait(1)
+        game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Title.UseSpinner:InvokeServer(false)
+
+
+    end
+
+end
+
+
+function autoFarm()
+    while getgenv().autoFarm do wait()
+        pcall(function()
+     local e1 = game.Players:GetPlayers()
+     local e2 = game.Players.LocalPlayer
+     
+     local t1 = game.TweenService
+     
+     for _,v in next, e1 do 
+         if v ~= e2 and e2.Character:WaitForChild("HumanoidRootPart") then
+             if (v.Character.HumanoidRootPart.Position - e2.Character.Head.Position).Magnitude < 150 then
+                 t1:Create(e2.Character.HumanoidRootPart, TweenInfo.new(0, Enum.EasingStyle.Linear), {CFrame = v.Character:WaitForChild("HumanoidRootPart").CFrame * CFrame.new(0,20,0)}):Play()
+             else 
+                 warn('no player in range')
+             end
+         end
+     end
+     end)
+     end
+
+    end
+
+    
+    
+
+-- BYPASS
+    local e1 
+    e1 = hookmetamethod(game, "__namecall", function(g1,z1,...)
+        local ab_z = {...}
+        if getnamecallmethod() == "FireServer" and z1.Name == "OnPunishment" then
+            if type(ab_z[1]) == 'number' then 
+                ab_z[1] = 0
+                if not ab_z[1] == 0 then 
+                    return warn('server checked not gone through')
+                end
+            end
+            return warn('...')
+        end
+        return e1(g1,z1,unpack(ab_z))
+    end)
+    
+    function check_2()
+        local b1 
+        b1 = hookmetamethod(game, "__index", function(self,...)
+            if tostring(self) == "game.Players.LocalPlayer" and (...) == "Name" then 
+                return "CoconutChoppers"
+            end
+            if tostring(self) == "game.Players.LocalPlayer.Character" and (...) == "Name" then 
+                return "CoconutChoppers"
+            end
+            return b1(self,...)
+        end)
+    
+        while task.wait() do
+            pcall(function()
+                game.Players.LocalPlayer.Character.FJsMovementAnticheat.Parent = nil
+                if not game.Players.LocalPlayer.Character:FindFirstChild("FJsMovementAnticheat") then 
+                    return warn('main part done')
+                end
+            end)
+        end
+    end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SleeksScripts/loading-z/main/script"))()
+    check_2()
+
+    
+end
+    
+
+
